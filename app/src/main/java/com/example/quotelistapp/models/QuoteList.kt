@@ -1,0 +1,10 @@
+package com.example.quotelistapp.models
+const val NETWORK_PAGE_SIZE = 25
+data class QuoteList(
+    val count: Int,
+    val lastItemIndex: Int,
+    val page: Int,
+    val results: List<Result>,
+    val totalCount: Int,
+    val totalPages: Int
+)
