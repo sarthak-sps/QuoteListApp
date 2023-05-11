@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
 
-class QuotePagingAdapter: PagingDataAdapter<com.example.quotelistapp.models.Result, QuotePagingAdapter.MovieViewHolder>(MovieComparator) {
+class QuotePagingAdapter: PagingDataAdapter<com.example.quotelistapp.models.Result, QuotePagingAdapter.MovieViewHolder>(QuoteComparator) {
     override fun onBindViewHolder(holder: QuotePagingAdapter.MovieViewHolder, position: Int) {
         val quote= getItem(position)
         holder.quoteText.text = quote?.content
@@ -28,7 +28,7 @@ class QuotePagingAdapter: PagingDataAdapter<com.example.quotelistapp.models.Resu
 
     }
 
-    object MovieComparator: DiffUtil.ItemCallback<com.example.quotelistapp.models.Result>() {
+    object QuoteComparator: DiffUtil.ItemCallback<com.example.quotelistapp.models.Result>() {
         override fun areItemsTheSame(oldItem: com.example.quotelistapp.models.Result, newItem: com.example.quotelistapp.models.Result): Boolean {
             // Id is unique.
             return oldItem.content == newItem.content
